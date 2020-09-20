@@ -1,11 +1,3 @@
-# SImple-Deno-Webview
-A simple wrapper for the webview_deno.
-
-# Example
-
-```deno run --unstable -A --reload https://raw.githubusercontent.com/jcc10/Simple-Deno-Webview/master/demo.ts```
-
-```typescript
 import { Application, Context } from "https://deno.land/x/oak/mod.ts";
 
 const app = new Application();
@@ -28,5 +20,15 @@ app.listen({ port: 8000 });
 
 await test.statusPromise(SimpleWebView.webviewStatus.killed);
 
+const test2 = new SimpleWebView({
+  title: "Local webview_deno example 2",
+  url: `http://127.0.0.1:8000/`,
+  height: 600,
+  resizable: true,
+  debug: false,
+  frameless: false,
+})
+
+await test2.statusPromise(SimpleWebView.webviewStatus.killed);
+
 Deno.exit();
-```

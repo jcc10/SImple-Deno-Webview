@@ -8,7 +8,7 @@ app.use((ctx: Context) => {
 
 import { SimpleWebView } from "https://raw.githubusercontent.com/jcc10/Simple-Deno-Webview/master/mod.ts";
 const test = new SimpleWebView({
-  title: "Local webview_deno example",
+  title: "Local webview_deno example 1",
   url: `http://127.0.0.1:8000/`,
   height: 600,
   resizable: true,
@@ -19,4 +19,16 @@ const test = new SimpleWebView({
 app.listen({ port: 8000 });
 
 await test.statusPromise(SimpleWebView.webviewStatus.killed);
+
+const test2 = new SimpleWebView({
+  title: "Local webview_deno example 2",
+  url: `http://127.0.0.1:8000/`,
+  height: 600,
+  resizable: true,
+  debug: false,
+  frameless: false,
+})
+
+await test2.statusPromise(SimpleWebView.webviewStatus.killed);
+
 Deno.exit();

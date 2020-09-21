@@ -1,1 +1,1 @@
-export { SimpleWebView } from "./webview-main.ts";
+export { SimpleWebView } from "./lib/main.ts";

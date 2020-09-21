@@ -12,7 +12,7 @@ export class SimpleWebView {
         this.status = webviewStatus.loading;
         this.options = options;
         this.worker = new Worker(
-            new URL("webview-runner.ts", import.meta.url).href,
+            new URL("worker.ts", import.meta.url).href,
             { type: "module", deno: true },
         );
 
